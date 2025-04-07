@@ -29,6 +29,8 @@ make flash FLASH_DEVICE=xxxx:yyyy (dfu-util --list) (note the text inside the [x
 -----------------------------------
 flashing rpi
 
+https://www.klipper3d.org/RPi_microcontroller.html
+
 make menuconfig
 "linux process" at "microcontroller archetecture"
 make clean
