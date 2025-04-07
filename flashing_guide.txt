@@ -1,0 +1,35 @@
+Flashing skr mini e3 v3:
+
+cd klipper
+make clean
+make menuconfig:
+- stm32
+- stm32G0B1
+- 8kiB bootloader
+- 8MHz crystal
+- Serial USART2 PA3/PA2
+
+make
+./scripts/flash-sdcard.sh /dev/ttyAMA0 btt-skr-mini-e3-v3
+
+-----------------------------------
+flashing klipper expander
+
+make menuconfig:
+- stm32
+- stm32F042
+- no bootloader
+- internal Clock
+- USB PA9/PA10
+
+install boot jumper and reboot board
+
+make flash FLASH_DEVICE=xxxx:yyyy (dfu-util --list) (note the text inside the [xxxx:yyyy])
+
+-----------------------------------
+flashing rpi
+
+make menuconfig
+"linux process" at "microcontroller archetecture"
+make clean
+make flash
